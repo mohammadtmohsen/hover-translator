@@ -6,6 +6,7 @@
 
 **Understand code and chat in your own language — translate on hover, free, no API key.**
 
+[![Open VSX](https://img.shields.io/open-vsx/v/mohammad-taleb/hover-translator?label=Open%20VSX)](https://open-vsx.org/extension/mohammad-taleb/hover-translator)
 [![CI](https://github.com/mohammadtmohsen/hover-translator/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammadtmohsen/hover-translator/actions/workflows/ci.yml)
 [![Latest release](https://img.shields.io/github/v/release/mohammadtmohsen/hover-translator)](https://github.com/mohammadtmohsen/hover-translator/releases/latest)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -29,6 +30,13 @@ panels (Claude, Codex, Copilot). **No API key, no signup.**
 - **Free & keyless** — a fallback chain of public translators, no account required.
 
 ## Install
+
+**Live on [Open VSX](https://open-vsx.org/extension/mohammad-taleb/hover-translator)** — the easiest way:
+
+- In VS Code / VSCodium / Cursor / Windsurf, search **Hover Translator** in the Extensions panel and click **Install**.
+- _Or_ from a terminal: `code --install-extension mohammad-taleb.hover-translator`
+
+### Or install from a release `.vsix`
 
 From the [latest release](https://github.com/mohammadtmohsen/hover-translator/releases/latest):
 
