@@ -54,3 +54,15 @@ Built the complete extension per plan:
 - **Packaged + installed**: `publisher` set to `mohammad-taleb`, added `LICENSE`. Produced
   `hover-translator-0.1.0.vsix` and installed into the user's VSCode via `code --install-extension`.
 - Gates: `tsc` (5.9.3 + 6.0.3) clean, `eslint` clean, **27 tests passing**.
+
+## Phase 4 done: distribution
+
+- **Listing polish**: globe icon (`media/icon.png`, generated pure-Node), gallery banner, `Education`
+  category, extra keywords, `repository`/`homepage`/`bugs` metadata.
+- **Marketplace blocked**: official VS Code Marketplace now requires an Azure DevOps org gated behind
+  an Azure subscription (card to verify). Open VSX also blocked by an Eclipse account registration
+  error on the user's side. Chose **GitHub distribution** instead.
+- **Published to GitHub**: public repo [mohammadtmohsen/hover-translator](https://github.com/mohammadtmohsen/hover-translator),
+  Release **v0.1.0** with `hover-translator-0.1.0.vsix` attached.
+  Install: download the `.vsix` → "Install from VSIX…" (or `code --install-extension`).
+- Future: Open VSX (once Eclipse account works) or Marketplace (with Azure account) can publish from the same repo.
