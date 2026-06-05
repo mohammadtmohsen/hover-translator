@@ -12,6 +12,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     env:
+      # Run JS actions (e.g. softprops/action-gh-release) on Node 24 instead of the
+      # deprecated Node 20. Becomes the default after 2026-06-16; harmless to keep.
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
       # Optional — add these as repository secrets to auto-publish to the registries.
       VSCE_PAT: ${{ secrets.VSCE_PAT }}
       OVSX_PAT: ${{ secrets.OVSX_PAT }}
