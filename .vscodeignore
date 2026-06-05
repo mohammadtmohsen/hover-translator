@@ -1,5 +1,6 @@
 .vscode/**
 .vscode-test/**
+.github/**
 out/**
 node_modules/**
 src/**
@@ -13,3 +14,5 @@ tsconfig.json
 .gitignore
 .vscode-test.mjs
 CLAUDE.md
+.env
+.env.*

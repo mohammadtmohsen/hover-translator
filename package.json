@@ -2,7 +2,7 @@
   "name": "hover-translator",
   "displayName": "Hover Translator",
   "description": "Translate code and text on hover (identifiers, comments, strings, selections, prose). Free, no API key required.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "mohammad-taleb",
   "license": "MIT",
   "icon": "media/icon.png",
