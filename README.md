@@ -92,8 +92,6 @@ Pushing a `v*` tag triggers the [release workflow](.github/workflows/release.yml
 packages the `.vsix`, and attaches it to a GitHub Release (and publishes to the Marketplace / Open VSX
 if `VSCE_PAT` / `OVSX_PAT` secrets are set).
 
-See [docs/RELEASING.md](docs/RELEASING.md) for how to cut a release and publish to a public registry.
-
 ## License
 
 [MIT](LICENSE) © Mohammad Taleb
