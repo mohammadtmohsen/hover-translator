@@ -132,7 +132,7 @@
     "watch": "node esbuild.js --watch",
     "vscode:prepublish": "npm run compile -- --production",
     "compile-tests": "tsc -p . --outDir out",
-    "pretest": "npm run compile-tests",
+    "pretest": "npm run compile && npm run compile-tests",
     "test": "vscode-test",
     "lint": "eslint src --ext ts"
   },
