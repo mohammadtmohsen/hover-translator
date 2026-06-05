@@ -1,0 +1,152 @@
+{
+  "name": "hover-translator",
+  "displayName": "Hover Translator",
+  "description": "Translate code and text on hover (identifiers, comments, strings, selections, prose). Free, no API key required.",
+  "version": "0.1.0",
+  "publisher": "mohammad-taleb",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#2563EB",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohammadtmohsen/hover-translator.git"
+  },
+  "homepage": "https://github.com/mohammadtmohsen/hover-translator#readme",
+  "bugs": {
+    "url": "https://github.com/mohammadtmohsen/hover-translator/issues"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Education"
+  ],
+  "keywords": [
+    "translate",
+    "translation",
+    "hover",
+    "i18n",
+    "localization",
+    "camelCase",
+    "language",
+    "clipboard",
+    "non-native",
+    "english"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true,
+      "description": "Only reads hovered text and calls keyless translation APIs; never executes workspace code."
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "translator.setTargetLanguage",
+        "title": "Hover Translator: Set Target Language"
+      },
+      {
+        "command": "translator.clearCache",
+        "title": "Hover Translator: Clear Translation Cache"
+      },
+      {
+        "command": "translator.toggleClipboardTranslation",
+        "title": "Hover Translator: Toggle Auto-Translate Copied Text"
+      },
+      {
+        "command": "translator.translateClipboard",
+        "title": "Hover Translator: Translate Clipboard"
+      }
+    ],
+    "configuration": {
+      "title": "Hover Translator",
+      "properties": {
+        "translator.targetLanguage": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Language to translate into (ISO 639-1 code, e.g. `es`, `fr`, `de`, `ar`, `zh`, `ja`, `hi`, `pt`). Leave empty to use the editor's display language."
+        },
+        "translator.sourceLanguage": {
+          "type": "string",
+          "default": "auto",
+          "markdownDescription": "Source language code, or `auto` to detect automatically."
+        },
+        "translator.email": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Optional email passed to MyMemory to raise the free daily limit from 5,000 to 50,000 characters. No signup required."
+        },
+        "translator.libreTranslateUrl": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Optional self-hosted [LibreTranslate](https://libretranslate.com) endpoint (e.g. `http://localhost:5000`). Enables unlimited/offline translation."
+        },
+        "translator.lingvaInstanceUrl": {
+          "type": "string",
+          "default": "https://lingva.ml",
+          "markdownDescription": "Lingva Translate instance used as a fallback provider."
+        },
+        "translator.maxSelectionLength": {
+          "type": "number",
+          "default": 1000,
+          "description": "Maximum number of characters translated from a selection."
+        },
+        "translator.cacheSize": {
+          "type": "number",
+          "default": 500,
+          "description": "Number of translations kept in the in-memory cache."
+        },
+        "translator.translateIdentifiers": {
+          "type": "boolean",
+          "default": true,
+          "description": "Translate identifiers under the cursor (splitting camelCase/snake_case into words)."
+        },
+        "translator.translateComments": {
+          "type": "boolean",
+          "default": true,
+          "description": "Translate comment text under the cursor."
+        },
+        "translator.translateStrings": {
+          "type": "boolean",
+          "default": true,
+          "description": "Translate string-literal contents under the cursor."
+        },
+        "translator.autoTranslateClipboard": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "Automatically translate text you copy (e.g. from Claude/Codex/Copilot chat panels) and show it in a popup. The clipboard is only read, never overwritten, so your copied text stays intact. Toggle from the status bar."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "node esbuild.js",
+    "watch": "node esbuild.js --watch",
+    "vscode:prepublish": "npm run compile -- --production",
+    "compile-tests": "tsc -p . --outDir out",
+    "pretest": "npm run compile-tests",
+    "test": "vscode-test",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.3.9",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  }
+}
